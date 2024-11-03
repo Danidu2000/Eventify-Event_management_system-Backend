@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/ticket")
 @RequiredArgsConstructor
+@CrossOrigin
 public class TicketController {
     @Autowired
     final TicketService service;

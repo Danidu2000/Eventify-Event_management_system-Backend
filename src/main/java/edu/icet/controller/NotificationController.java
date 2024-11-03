@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/notification")
 @RequiredArgsConstructor
+@CrossOrigin
 public class NotificationController {
     @Autowired
     final NotificationService service;

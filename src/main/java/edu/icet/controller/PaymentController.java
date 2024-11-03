@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/payment")
 @RequiredArgsConstructor
+@CrossOrigin
 public class PaymentController {
     @Autowired
     final PaymentService service;

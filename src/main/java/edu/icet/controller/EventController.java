@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/event")
 @RequiredArgsConstructor
+@CrossOrigin
 public class EventController {
     @Autowired
     final EventService service;
