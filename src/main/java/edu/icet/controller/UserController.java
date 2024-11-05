@@ -1,5 +1,7 @@
 package edu.icet.controller;
 
+import edu.icet.dto.LoginDetails;
+import edu.icet.dto.LoginStatus;
 import edu.icet.dto.User;
 import edu.icet.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -34,5 +36,9 @@ public class UserController {
     @GetMapping("/search-by-id/{id}")
     public User searchUserById(@PathVariable Integer id){
         return service.searchById(id);
+    }
+    @PostMapping("/login")
+    public LoginStatus login(@RequestBody LoginDetails loginDetails){
+        return service.login(loginDetails);
     }
 }
