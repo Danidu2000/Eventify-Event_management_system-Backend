@@ -13,4 +13,5 @@ import lombok.ToString;
 public class LoginStatus {
     boolean conformation;
     String massage;
+    Integer user_id;
 }

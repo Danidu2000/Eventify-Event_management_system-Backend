@@ -18,6 +18,6 @@ public class Event {
     private String description;
     private String location;
     private LocalDate date;
-    private Integer capacity;
     private Integer organizer_id;
+    private String imagePath;
 }
