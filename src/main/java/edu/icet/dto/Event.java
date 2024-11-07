@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Data
 @AllArgsConstructor
@@ -18,6 +19,7 @@ public class Event {
     private String description;
     private String location;
     private LocalDate date;
-    private Integer organizer_id;
+    private LocalTime time;
+    private Integer organizerId;
     private String imagePath;
 }

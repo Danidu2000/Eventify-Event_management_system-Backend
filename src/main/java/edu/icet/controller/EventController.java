@@ -31,19 +31,19 @@ public class EventController {
         }
     }
     @PutMapping("/update-event")
-    public void updateEvent(@RequestPart("event") Event event, @RequestPart("image") MultipartFile image){
-        try {
-            service.update(event, image);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void updateEvent(@RequestBody Event event){
+        service.update(event);
     }
-    @DeleteMapping("/deleteById-by-id/{id}")
+    @DeleteMapping("/delete-by-id/{id}")
     public void deleteEvent(@PathVariable Integer id){
         service.deleteById(id);
     }
     @GetMapping("/search-by-id/{id}")
     public Event searchUserById(@PathVariable Integer id){
         return service.searchById(id);
+    }
+    @GetMapping("/get-list-by-organizer_id/{id}")
+    public List<Event> getEventsByOrganizerId(@PathVariable Integer id){
+        return service.getEventsByOrganizerId(id);
     }
 }

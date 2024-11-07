@@ -69,6 +69,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public void update(Event event) {
+        repository.save(mapper.map(event, EventEntity.class));
     }
 
     @Override
@@ -96,6 +97,15 @@ public class EventServiceImpl implements EventService {
 
             repository.save(eventEntity);
         }
+    }
+
+    @Override
+    public List<Event> getEventsByOrganizerId(Integer id) {
+        List<Event> eventArrayList = new ArrayList<>();
+        repository.findByOrganizerId(id).forEach(eventEntity -> {
+                eventArrayList.add(mapper.map(eventEntity, Event.class));
+            });
+            return eventArrayList;
     }
 
     @Override
