@@ -24,7 +24,7 @@ public class EventServiceImpl implements EventService {
     private final ModelMapper mapper;
     private static final String UPLOAD_DIR = "C:/uploads/";
     @Override
-    public void add(Event event, MultipartFile image) throws IOException {
+    public Integer add(Event event, MultipartFile image) throws IOException {
         EventEntity eventEntity = mapper.map(event, EventEntity.class);
 
         if (image != null && !image.isEmpty()) {
@@ -32,6 +32,7 @@ public class EventServiceImpl implements EventService {
         }
 
         repository.save(eventEntity);
+        return eventEntity.getId();
     }
 
     private void saveImage(MultipartFile image, EventEntity eventEntity) throws IOException {

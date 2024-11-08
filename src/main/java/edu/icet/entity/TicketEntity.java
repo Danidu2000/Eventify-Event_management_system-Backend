@@ -19,6 +19,6 @@ public class TicketEntity {
     private Integer id;
     private double price;
     private String status;
-    private Integer user_id;
-    private Integer event_id;
+    private Integer organizerId;
+    private Integer eventId;
 }

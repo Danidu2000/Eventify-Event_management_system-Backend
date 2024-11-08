@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 public interface EventService extends CrudService<Event> {
-    void add(Event event,MultipartFile image) throws IOException;
+    Integer add(Event event,MultipartFile image) throws IOException;
     void update(Event event,MultipartFile image) throws IOException;
 
     List<Event> getEventsByOrganizerId(Integer id);

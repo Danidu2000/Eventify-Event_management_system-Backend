@@ -1,5 +1,6 @@
 package edu.icet.service.custom;
 
+import edu.icet.dto.Event;
 import edu.icet.dto.Ticket;
 import edu.icet.entity.TicketEntity;
 import edu.icet.repository.TicketRepository;
@@ -42,5 +43,23 @@ public class TicketServiceImpl implements TicketService {
     @Override
     public Ticket searchById(Integer id) {
         return mapper.map(repository.findById(id), Ticket.class);
+    }
+
+    @Override
+    public List<Ticket> getTicketsByOrganizerId(Integer id) {
+        List<Ticket> ticketArrayList = new ArrayList<>();
+        repository.findByOrganizerId(id).forEach(ticketEntity -> {
+            ticketArrayList.add(mapper.map(ticketEntity,Ticket.class));
+        });
+        return ticketArrayList;
+    }
+
+    @Override
+    public List<Ticket> getTicketsByEventId(Integer id) {
+        List<Ticket> ticketArrayList = new ArrayList<>();
+        repository.findByEventId(id).forEach(ticketEntity -> {
+            ticketArrayList.add(mapper.map(ticketEntity,Ticket.class));
+        });
+        return ticketArrayList;
     }
 }

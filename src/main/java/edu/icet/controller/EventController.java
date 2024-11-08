@@ -23,9 +23,9 @@ public class EventController {
     }
 
     @PostMapping("/add-event")
-    public void addEvent(@RequestPart("event") Event event, @RequestPart("image") MultipartFile image){
+    public Integer addEvent(@RequestPart("event") Event event, @RequestPart("image") MultipartFile image){
         try {
-            service.add(event,image);
+            return service.add(event,image);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

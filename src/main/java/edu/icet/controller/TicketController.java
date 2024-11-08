@@ -1,5 +1,6 @@
 package edu.icet.controller;
 
+import edu.icet.dto.Event;
 import edu.icet.dto.Ticket;
 import edu.icet.service.TicketService;
 import lombok.RequiredArgsConstructor;
@@ -34,5 +35,13 @@ public class TicketController {
     @GetMapping("/search-by-id/{id}")
     public Ticket searchUserById(@PathVariable Integer id){
         return service.searchById(id);
+    }
+    @GetMapping("/get-list-by-organizer_id/{id}")
+    public List<Ticket> getTicketsByOrganizerId(@PathVariable Integer id){
+        return service.getTicketsByOrganizerId(id);
+    }
+    @GetMapping("/get-list-by-event_id/{id}")
+    public List<Ticket> getTicketsByEventId(@PathVariable Integer id){
+        return service.getTicketsByEventId(id);
     }
 }
