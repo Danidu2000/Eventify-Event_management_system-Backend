@@ -22,7 +22,7 @@ import java.util.Optional;
 public class EventServiceImpl implements EventService {
     private final EventRepository repository;
     private final ModelMapper mapper;
-    private static final String UPLOAD_DIR = "C:/uploads/";
+    private static final String UPLOAD_DIR = "F:/ICET/Assignments/Individual Project 01/Eventify-Event_management_system-Frontend/src/assets/img uploads";
     @Override
     public Integer add(Event event, MultipartFile image) throws IOException {
         EventEntity eventEntity = mapper.map(event, EventEntity.class);
@@ -46,8 +46,11 @@ public class EventServiceImpl implements EventService {
         Path filePath = uploadPath.resolve(fileName);
         image.transferTo(filePath.toFile());
 
-        eventEntity.setImagePath(filePath.toString());
+        // Set the relative path for frontend access
+        String relativePath = "assets/img uploads/" + fileName;
+        eventEntity.setImagePath(relativePath);
     }
+
 
     @Override
     public void add(Event event) {

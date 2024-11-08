@@ -16,6 +16,5 @@ public class Payment {
     private String method;
     private double amount;
     private LocalDate date;
-    private Integer event_id;
-    private Integer user_id;
+    private Integer userId;
 }
