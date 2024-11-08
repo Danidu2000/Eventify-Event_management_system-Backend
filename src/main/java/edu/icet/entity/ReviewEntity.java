@@ -21,6 +21,6 @@ public class ReviewEntity {
     private String comment;
     private Integer rating;
     private LocalDate date;
-    private Integer user_id;
-    private Integer event_id;
+    private Integer userId;
+    private Integer eventId;
 }

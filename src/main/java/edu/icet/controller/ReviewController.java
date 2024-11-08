@@ -35,4 +35,12 @@ public class ReviewController {
     public Review searchUserById(@PathVariable Integer id){
         return service.searchById(id);
     }
+    @GetMapping("/get-list-by-event_id/{id}")
+    public List<Review> getReviewsByEventId(@PathVariable Integer id){
+        return service.getReviewsByEventId(id);
+    }
+    @GetMapping("/get-list-by-user_id/{id}")
+    public List<Review> getReviewsByUserId(@PathVariable Integer id){
+        return service.getReviewsByUserId(id);
+    }
 }

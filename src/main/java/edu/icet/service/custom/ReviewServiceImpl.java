@@ -43,4 +43,22 @@ public class ReviewServiceImpl implements ReviewService {
     public Review searchById(Integer id) {
         return mapper.map(repository.findById(id), Review.class);
     }
+
+    @Override
+    public List<Review> getReviewsByEventId(Integer id) {
+        List<Review> reviewArrayList = new ArrayList<>();
+        repository.findByEventId(id).forEach(reviewEntity -> {
+            reviewArrayList.add(mapper.map(reviewEntity, Review.class));
+        });
+        return reviewArrayList;
+    }
+
+    @Override
+    public List<Review> getReviewsByUserId(Integer id) {
+        List<Review> reviewArrayList = new ArrayList<>();
+        repository.findByUserId(id).forEach(reviewEntity -> {
+            reviewArrayList.add(mapper.map(reviewEntity, Review.class));
+        });
+        return reviewArrayList;
+    }
 }
