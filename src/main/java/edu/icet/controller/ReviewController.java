@@ -27,7 +27,7 @@ public class ReviewController {
     public void updateReview(@RequestBody Review review){
         service.update(review);
     }
-    @DeleteMapping("/deleteById-by-id/{id}")
+    @DeleteMapping("/delete-by-id/{id}")
     public void deletePayment(@PathVariable Integer id){
         service.deleteById(id);
     }
