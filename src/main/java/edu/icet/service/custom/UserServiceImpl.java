@@ -55,13 +55,13 @@ public class UserServiceImpl implements UserService {
             String savedEmail = savedDetails.get().getEmail();
             String savedPassword = savedDetails.get().getPassword();
             if (loginDetails.getEmail().equals(savedEmail)&&loginDetails.getPassword().equals(savedPassword)){
-                return new LoginStatus(true,"Login Success",savedDetails.get().getId());
+                return new LoginStatus(true,"Login Success",savedDetails.get().getId(),savedDetails.get().getRole());
             }else {
-                return new LoginStatus(false,"Incorrect password",0);
+                return new LoginStatus(false,"Incorrect password",0,null);
             }
 
         }else {
-            return new LoginStatus(false,"User email is not registered",0);
+            return new LoginStatus(false,"User email is not registered",0,null);
         }
     }
 }
