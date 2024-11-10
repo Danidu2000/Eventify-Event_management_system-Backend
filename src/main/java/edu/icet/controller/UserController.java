@@ -41,4 +41,8 @@ public class UserController {
     public LoginStatus login(@RequestBody LoginDetails loginDetails){
         return service.login(loginDetails);
     }
+    @GetMapping("/search-by-email/{email}")
+    public User searchUserByEmail(@PathVariable String email){
+        return service.searchByEmail(email);
+    }
 }

@@ -64,4 +64,9 @@ public class UserServiceImpl implements UserService {
             return new LoginStatus(false,"User email is not registered",0,null);
         }
     }
+
+    @Override
+    public User searchByEmail(String email) {
+        return mapper.map(repository.findByEmail(email),User.class);
+    }
 }

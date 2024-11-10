@@ -7,3 +7,15 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+
+    mail:
+      host: smtp.gmail.com
+      port: 587
+      username: eventifysystem@gmail.com
+      password: wxyvhayqbovlnamf
+      properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true

@@ -6,21 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "notification")
-
-public class NotificationEntity {
+public class OtpEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String title;
-    private String massage;
-    private LocalDate date;
-    private Integer event_id;
-    private Integer user_id;
+    private Long id;
+    private String email;
+    private String otpCode;
+    private LocalDateTime expirationTime;
 }
