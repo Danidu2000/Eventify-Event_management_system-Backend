@@ -15,7 +15,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin
 public class UserController {
-    @Autowired
     final UserService service;
     @GetMapping("/get-all")
     public List<User> getAll(){

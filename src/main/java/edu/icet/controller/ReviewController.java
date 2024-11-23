@@ -13,7 +13,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin
 public class ReviewController {
-    @Autowired
     final ReviewService service;
     @GetMapping("/get-all")
     public List<Review> getAll(){

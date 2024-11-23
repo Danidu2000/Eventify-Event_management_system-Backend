@@ -15,8 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin
 public class EventController {
-    @Autowired
-    final EventService service;
+    private final EventService service;
     @GetMapping("/get-all")
     public List<Event> getAll(){
         return service.getAll();

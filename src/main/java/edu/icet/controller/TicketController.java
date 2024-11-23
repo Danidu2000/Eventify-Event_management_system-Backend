@@ -14,7 +14,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin
 public class TicketController {
-    @Autowired
     final TicketService service;
     @GetMapping("/get-all")
     public List<Ticket> getAll(){

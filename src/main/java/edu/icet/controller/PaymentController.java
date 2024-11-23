@@ -13,7 +13,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @CrossOrigin
 public class PaymentController {
-    @Autowired
     final PaymentService service;
     @GetMapping("/get-all")
     public List<Payment> getAll(){
